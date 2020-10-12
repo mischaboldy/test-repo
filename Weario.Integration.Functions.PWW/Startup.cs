@@ -14,15 +14,15 @@ namespace Weario.Integration.Functions.PWW
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
-            //var config = new ConfigurationBuilder()
-            //        .SetBasePath(Environment.CurrentDirectory)
-            //        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            //        .AddEnvironmentVariables()
-            //        .Build();
-
+            var config = new ConfigurationBuilder()
+                    .SetBasePath(Environment.CurrentDirectory)
+                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                    .AddEnvironmentVariables()
+                    .Build();
             Console.WriteLine(Environment.CurrentDirectory);
+            Console.WriteLine("Run");
 
-            //builder.Services.AddOptions<AppSettings>().Bind(config.GetSection("AppSettings"));
+            builder.Services.AddOptions<AppSettings>().Bind(config.GetSection("AppSettings"));
         }
     }
 }
