@@ -20,6 +20,8 @@ namespace Weario.Integration.Functions.PWW
                     .AddEnvironmentVariables()
                     .Build();
 
+            Console.WriteLine(config["Test"]);
+
             builder.Services.AddOptions<AppSettings>().Bind(config.GetSection("AppSettings"));
         }
     }
