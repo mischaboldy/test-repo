@@ -74,3 +74,5 @@ stages:
               appType: functionApp
               appName: $(functionAppName)
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              appSettings: '-Test "Sould be this now in app settings"'
+              configurationStrings: '-Test "Should be this now in configuration settings"'
