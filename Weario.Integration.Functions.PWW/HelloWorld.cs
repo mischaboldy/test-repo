@@ -13,7 +13,7 @@ namespace Weario.Integration.Functions.PWW
 {
     public interface IHelloWorld
     {
-        Task<IActionResult> Blaat();
+        Task<IActionResult> Run();
     }
     public class HelloWorld
     {
@@ -39,7 +39,10 @@ namespace Weario.Integration.Functions.PWW
             log.LogInformation("Run");
             log.LogInformation("1 " + config.GetSection("AppSettings")["Name"]);
             log.LogInformation("2 " + config.GetSection("AppSettings")["Title"]);
-            log.LogInformation("3 " + config["Test"]);
+            log.LogInformation("3 " + config.GetSection("Interests")["NumberOneHobby"]);
+            log.LogInformation("4 " + config["Test"]);
+            log.LogInformation("5 " + config["Title"]);
+            log.LogInformation("6 " + config["Interests:NumberOneHobby"]);
 
             log.LogInformation(Environment.CurrentDirectory);
             log.LogInformation("C# HTTP trigger function processed a request.");

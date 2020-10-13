@@ -67,6 +67,15 @@ stages:
         deploy:
 
           steps:
+          - task: AzureFunctionApp@1
+            displayName: 'Azure functions app deploy'
+            inputs:
+              azureSubscription: '$(azureSubscription)'
+              appType: functionApp
+              appName: $(functionAppName)
+              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              appSettings: '-Test "Should be this now in app settings"'
+              configurationStrings: '-Test "Should be this now in configuration settings"'
           - task: AzureAppServiceSettings@1
             displayName: Azure App Service Settings
             inputs:
@@ -110,12 +119,3 @@ stages:
                     "slotSetting": false
                   }
                 ]
-          - task: AzureFunctionApp@1
-            displayName: 'Azure functions app deploy'
-            inputs:
-              azureSubscription: '$(azureSubscription)'
-              appType: functionApp
-              appName: $(functionAppName)
-              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-              appSettings: '-Test "Should be this now in app settings"'
-              configurationStrings: '-Test "Should be this now in configuration settings"'
