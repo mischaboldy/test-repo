@@ -33,6 +33,7 @@ namespace Weario.Integration.Functions.PWW
             var config = new ConfigurationBuilder()
                 .SetBasePath(Environment.CurrentDirectory)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables()
                 .Build();
             log.LogInformation(Environment.CurrentDirectory);
             log.LogInformation("Run");
