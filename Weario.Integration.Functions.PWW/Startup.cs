@@ -19,10 +19,9 @@ namespace Weario.Integration.Functions.PWW
                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                     .AddEnvironmentVariables()
                     .Build();
-            Console.WriteLine(Environment.CurrentDirectory);
-            Console.WriteLine("Run");
-
-            builder.Services.AddOptions<AppSettings>().Bind(config.GetSection("AppSettings"));
+            
+            builder.Services.Configure<AppSettings>(config.GetSection("AppSettings"));
+            //builder.Services.AddOptions<AppSettings>().Bind(config.GetSection("AppSettings"));
         }
     }
 }

@@ -33,24 +33,23 @@ namespace Weario.Integration.Functions.PWW
             var config = new ConfigurationBuilder()
                 .SetBasePath(Environment.CurrentDirectory)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddEnvironmentVariables()
                 .Build();
             log.LogInformation(Environment.CurrentDirectory);
             log.LogInformation("Run");
             log.LogInformation("1 " + config.GetSection("AppSettings")["Name"]);
             log.LogInformation("2 " + config.GetSection("AppSettings")["Title"]);
-            log.LogInformation("3 " + config.GetSection("Interests")["NumberOneHobby"]);
+            log.LogInformation("3 " + config.GetSection("AppSettings")["Interests:NumberOneHobby"]);
             log.LogInformation("4 " + config["Test"]);
             log.LogInformation("5 " + config["Title"]);
             log.LogInformation("6 " + config["Interests:NumberOneHobby"]);
 
-            log.LogInformation(Environment.CurrentDirectory);
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            //log.LogInformation(Environment.CurrentDirectory);
+            //log.LogInformation("C# HTTP trigger function processed a request.");
             log.LogInformation($"Returning some information about {_localSettings.Name}");
             //string responseMessage = "Hello there";
             string responseMessage = $"Hello there {_localSettings.Title} {_localSettings.Name}";
             //string responseMessage = $"Hello there {_localSettings.Title} {_localSettings.Name}, I see you are a {_localSettings.Interests.Occupation} " +
-                //$"who likes {_localSettings.Interests.NumberOneHobby}. Is it correct that your favorite movie is '{_localSettings.Interests.FavoriteMovie}'?";
+            //    $"who likes {_localSettings.Interests.NumberOneHobby}. Is it correct that your favorite movie is '{_localSettings.Interests.FavoriteMovie}'?";
 
             return new OkObjectResult(responseMessage);
        }

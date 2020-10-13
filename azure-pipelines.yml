@@ -86,36 +86,28 @@ stages:
               appSettings: |
                 [
                   {
-                    "name": "NAME",
-                    "value": "Rick",
-                    "slotSetting": false
-                  },
-                  {
-                    "name": "Title",
-                    "value": "Esteemed",
-                    "slotSetting": false
-                  },
-                  {
-                    "name": "Interests:NumberOneHobby",
+                    "name": "AppSettings:Interests:NumberOneHobby",
                     "value": "Not cats",
                     "slotSetting": false
                   },
                   {
-                    "name": "Test",
-                    "value": "Can I change this in app settings?",
-                    "slotSetting": false
-                  }
-                ]
-              generalSettings: |
-                [
-                  {
-                    "name": "NAME",
-                    "value": "test 2",
+                    "name": "AppSettings:Interests:FavoriteMovie",
+                    "value": "No idea",
                     "slotSetting": false
                   },
                   {
-                    "name": "Test",
-                    "value": "Can I change this in general settings?",
+                    "name": "AppSettings:Interests:Occupation",
+                    "value": "Something with .net",
+                    "slotSetting": false
+                  },
+                  {
+                    "name": "AppSettings:Name",
+                    "value": "Rick",
+                    "slotSetting": false
+                  },
+                  {
+                    "name": "AppSettings:Title",
+                    "value": "Esteemed",
                     "slotSetting": false
                   }
                 ]
